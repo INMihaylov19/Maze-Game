@@ -27,6 +27,12 @@
     <ClCompile Include="controls.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rules.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FrontEnd.h">
@@ -35,7 +41,13 @@
     <ClInclude Include="BackEnd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="contols.h">
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controls.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

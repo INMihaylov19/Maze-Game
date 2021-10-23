@@ -9,3 +9,5 @@
 void menuArt();
 
 int Menu();
+
+void choice();

@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <windows.h>
 
-int SetColor[3] = { 13, 7, 7 };
+int SetColor[];
 
 void color(int color);
 

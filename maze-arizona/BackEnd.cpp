@@ -17,10 +17,8 @@ void random (int* i, int* j)
 		rand() % 2 ? j-1 : j+1;
 }
 
-void maze_grid(int size)
+void maze_grid(int size, int** grid)
 {
-	//declare the grid for the maze
-	int** grid = new int* [size];
 	for (int i = 0; i < size; i++)
 	{
 		grid[i] = new int[size];
@@ -48,6 +46,7 @@ void maze_grid(int size)
 	for (int i = 1; i < size - 1; i++)
 		for (int j = 1; j < size - 1; j++)
 		{
+			//sloji gi v assignovete na grida
 			*tempi = i;
 			*tempj = j;
 			random(&i, &j);

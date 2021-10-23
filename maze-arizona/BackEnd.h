@@ -5,4 +5,4 @@
 
 void random(int* i, int* j);
 
-void maze_grid(int size);
+void maze_grid(int size, int** grid);

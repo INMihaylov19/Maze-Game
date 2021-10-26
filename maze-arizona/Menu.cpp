@@ -49,21 +49,21 @@ void choice()
             {
                 //display the 10x10 grid
                 system("CLS");
-                cout << "Coming soon";
+                check(10);
                 break;
             }
             if (choiceCount == 2)
             {
                 //display the 20x20 grid
                 system("CLS");
-                cout << "Coming soon 2";
+                check(20);
                 break;
             }
             if (choiceCount == 3)
             {
                 //display the 30x30 grid
                 system("CLS");
-                cout << "Coming soon 3";
+                check(30);
                 break;
             }
         }

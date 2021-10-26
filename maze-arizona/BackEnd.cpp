@@ -19,10 +19,7 @@ void random (int* i, int* j)
 
 void maze_grid(int size, int** grid)
 {
-	for (int i = 0; i < size; i++)
-	{
-		grid[i] = new int[size];
-	}
+	
 
 	//set values
 	/* 0 - the algorithm still hasn't gone through the cell
@@ -66,8 +63,4 @@ void maze_grid(int size, int** grid)
 	//deallocate memory
 	delete tempi;
 	delete tempj;
-
-	for (int i = 0; i < size; i++)
-		delete[] grid[i];
-	delete[] grid;
 }

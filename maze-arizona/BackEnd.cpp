@@ -46,20 +46,21 @@ void maze_grid(int size, int** grid)
 	for (int i = 1; i < size - 1; i++)
 		for (int j = 1; j < size - 1; j++)
 		{
-			//sloji gi v assignovete na grida
 			*tempi = i;
 			*tempj = j;
+
 			random(&i, &j);
 			grid[i][j] = 1;
+
 			//assign values to walls
-			grid[i - 1][j - 1] != 1 ? grid[i - 1][j - 1] = 2 : grid[i][j]; //up left
-			grid[i - 1][j    ] != 1 ? grid[i - 1][j    ] = 2 : grid[i][j]; //up center
-			grid[i - 1][j + 1] != 1 ? grid[i - 1][j + 1] = 2 : grid[i][j]; //up right
-			grid[i    ][j - 1] != 1 ? grid[i    ][j - 1] = 2 : grid[i][j]; //center left
-			grid[i    ][j + 1] != 1 ? grid[i    ][j + 1] = 2 : grid[i][j]; //center right
-			grid[i + 1][j - 1] != 1 ? grid[i + 1][j - 1] = 2 : grid[i][j]; //down left
-			grid[i + 1][j    ] != 1 ? grid[i + 1][j    ] = 2 : grid[i][j]; //down center
-			grid[i + 1][j + 1] != 1 ? grid[i + 1][j + 1] = 2 : grid[i][j]; //down right
+			grid[*tempi - 1][*tempj - 1] != 1 ? grid[*tempi - 1][*tempj - 1] = 2 : grid[*tempi][*tempj]; //up left
+			grid[*tempi - 1][*tempj    ] != 1 ? grid[*tempi - 1][*tempj    ] = 2 : grid[*tempi][*tempj]; //up center
+			grid[*tempi - 1][*tempj + 1] != 1 ? grid[*tempi - 1][*tempj + 1] = 2 : grid[*tempi][*tempj]; //up right
+			grid[*tempi    ][*tempj - 1] != 1 ? grid[*tempi    ][*tempj - 1] = 2 : grid[*tempi][*tempj]; //center left
+			grid[*tempi    ][*tempj + 1] != 1 ? grid[*tempi    ][*tempj + 1] = 2 : grid[*tempi][*tempj]; //center right
+			grid[*tempi + 1][*tempj - 1] != 1 ? grid[*tempi + 1][*tempj - 1] = 2 : grid[*tempi][*tempj]; //down left
+			grid[*tempi + 1][*tempj    ] != 1 ? grid[*tempi + 1][*tempj    ] = 2 : grid[*tempi][*tempj]; //down center
+			grid[*tempi + 1][*tempj + 1] != 1 ? grid[*tempi + 1][*tempj + 1] = 2 : grid[*tempi][*tempj]; //down right
 		}
 
 	//deallocate memory

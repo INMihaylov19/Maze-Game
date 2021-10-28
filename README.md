@@ -16,6 +16,8 @@
 
 • C++ based maze game, where the player has to solve the maze.
 
+# Documents
+
 [•Presentation](Documents/Presentation.pptx) <br><br>
 [•Documentation](Documents/Documentation.docx)
 

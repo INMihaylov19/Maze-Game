@@ -1,5 +1,6 @@
 #include <stack>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 void assign_new_values(const stack<pair<int, int>>& stack, int& i, int& j)
@@ -26,14 +27,8 @@ void check_path_cell(char** arr, const stack<pair<int, int>>& stack, int& i, int
     }
 }
 
-void maze_grid(int size, int** grid)
+void maze_grid(int size, char** arr)
 {
-    int size = 10;
-
-    char** arr = new char* [size];
-    for (int i = 0; i < size; i++)
-        arr[i] = new char[size];
-
     //cell count
     int counter = 0;
 
@@ -51,6 +46,7 @@ void maze_grid(int size, int** grid)
 
     //available spaces around current cell
     stack<pair<int, int>> available;
+    bool available_arr[4] = { 0, 0, 0, 0 };
 
     //the path used for backtracking
     stack<pair<int, int>> path;
@@ -61,24 +57,43 @@ void maze_grid(int size, int** grid)
     //continues until all cells have been assigned a value
     while (counter != (size - 1) * size + size)
     {
-        if (arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x')
+        if (arr[i][j + 2] && arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x')//
+        {
             available.push({ i, j + 2 });
-        if (arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x')
+            available_arr[0] = 1;
+        }
+        if (arr[i + 2][j] && arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x')
+        {
             available.push({ i + 2, j });
-        if (arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x')
+            available_arr[1] = 1;
+        }
+        if (i > 1 && arr[i - 2][j] && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //
+        {
             available.push({ i - 2, j });
-        if (arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x')
+            available_arr[2] = 1;
+        }
+        if (j > 1 && arr[i][j - 2] && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //
+        {
             available.push({ i, j - 2 });
+            available_arr[3] = 1;
+        }
 
         if (!available.empty())
         {
             // Choose one available neighbour at random
-            int next_cell = rand() % available.size();
+            srand((unsigned)time(0));
+            int next_cell;
+            while (true)
+            {
+                next_cell = (rand() % 4) + 1;
+                if (available_arr[next_cell - 1])
+                    break;
+            }
 
             // Create a path between the neighbour and the current cell
             switch (next_cell)
             {
-            case 0: // East
+            case 1: // East
                 arr[available.top().first][available.top().second] = 'y';
 
                 //make the cell between the two filled cells a path cell
@@ -91,7 +106,7 @@ void maze_grid(int size, int** grid)
                 counter += 2;
                 break;
 
-            case 1: // South
+            case 2: // South
                 available.pop();
                 arr[available.top().first][available.top().second] = 'y';
 
@@ -105,7 +120,7 @@ void maze_grid(int size, int** grid)
                 counter += 2;
                 break;
 
-            case 2: // West
+            case 3: // West
                 available.pop();
                 available.pop();
                 arr[available.top().first][available.top().second] = 'y';
@@ -120,7 +135,7 @@ void maze_grid(int size, int** grid)
                 counter += 2;
                 break;
 
-            case 3: // North
+            case 4: // North
                 available.pop();
                 available.pop();
                 available.pop();
@@ -144,6 +159,15 @@ void maze_grid(int size, int** grid)
             path.pop();
             //assign the previous cell's values to the coordinate variables
             assign_new_values(path, i, j);
+        }
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if (int(arr[i][j]) == 0)
+                arr[i][j] = 'x';
         }
     }
 }

@@ -2,6 +2,7 @@
 #include <stack>
 #include <cstdlib>
 #include <ctime>
+using namespace std;
 
 void assign_new_values(const stack<pair<int, int>>& stack, int& i, int& j);
 

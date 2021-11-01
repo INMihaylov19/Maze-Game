@@ -10,14 +10,14 @@ using namespace std;
 
 void menuArt()
 {
-    gotoxy(40, 3); color(SetColor[0]); cout << "================================"; color(SetColor[1]);
-    gotoxy(40, 4); color(SetColor[1]); cout << " __  __   _____   _   _   _   _";
-    gotoxy(40, 5); color(SetColor[1]); cout << "|  \\/  | |  ___| | \\ | | | | | |";
-    gotoxy(40, 6); color(SetColor[1]); cout << "| .  . | | |__   |  \\| | | | | |";
-    gotoxy(40, 7); color(SetColor[1]); cout << "| |\\/| | |  __|  | . ` | | | | |";
-    gotoxy(40, 8); color(SetColor[1]); cout << "| |  | | | |___  | |\\  | | |_| |";
-    gotoxy(40, 9); color(SetColor[1]); cout << "\\_|  |_/ \\____/  \\_| \\_/  \\___/";
-    gotoxy(40, 11); color(SetColor[0]); cout << "================================"; color(SetColor[1]);
+    gotoxy(40, 3); cout << "================================";
+    gotoxy(40, 4); cout << " __  __   _____   _   _   _   _";
+    gotoxy(40, 5); cout << "|  \\/  | |  ___| | \\ | | | | | |";
+    gotoxy(40, 6); cout << "| .  . | | |__   |  \\| | | | | |";
+    gotoxy(40, 7); cout << "| |\\/| | |  __|  | . ` | | | | |";
+    gotoxy(40, 8); cout << "| |  | | | |___  | |\\  | | |_| |";
+    gotoxy(40, 9); cout << "\\_|  |_/ \\____/  \\_| \\_/  \\___/";
+    gotoxy(40, 11); cout << "================================";
 }
 
 void choice()
@@ -90,11 +90,11 @@ int Menu()
 
     for (int i = 0;;)
     {
-        gotoxy(48, 13); color(SetColor[0]); cout << "1. Get started "; color(SetColor[0]);
+        gotoxy(48, 13); color(SetColor[0]); cout << "1. Get started "; color(SetColor[2]);
 
-        gotoxy(48, 14); color(SetColor[1]); cout << "2. Rules "; color(SetColor[0]);
+        gotoxy(48, 14); color(SetColor[1]); cout << "2. Rules "; color(SetColor[2]);
 
-        gotoxy(48, 15); color(SetColor[2]); cout << "3. Exit " << endl; color(SetColor[0]);
+        gotoxy(48, 15); color(SetColor[2]); cout << "3. Exit " << endl; color(SetColor[2]);
 
         key = _getch();
 

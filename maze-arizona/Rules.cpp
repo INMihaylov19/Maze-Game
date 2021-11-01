@@ -13,18 +13,18 @@ void rules()
 {
     char back;
 
-    gotoxy(38, 3); color(SetColor[0]); cout << "======================================="; color(SetColor[1]);
-    gotoxy(38, 4); color(SetColor[1]); cout << " _____   _   _   _       _____   _____ ";
-    gotoxy(38, 5); color(SetColor[1]); cout << "| ___ \\ | | | | | |     |  ___| /  ___|";
-    gotoxy(38, 6); color(SetColor[1]); cout << "| |_/ / | | | | | |     | |__   \\ `--.";
-    gotoxy(38, 7); color(SetColor[1]); cout << "|    /  | | | | | |     |  __|   `--. \\";
-    gotoxy(38, 8); color(SetColor[1]); cout << "| |\\ \\  | |_| | | |____ | |___  /\\__/ /";
-    gotoxy(38, 9); color(SetColor[1]); cout << "\\_| \\_|  \\___/  \\_____/ \\____/  \\____/";
-    gotoxy(38, 11); color(SetColor[0]); cout << "======================================="; color(SetColor[1]);
-    gotoxy(50, 13); cout << "1. Have fun!!";
-    gotoxy(50, 14); cout << "1. Have fun!!";
-    gotoxy(50, 15); cout << "1. Have fun!!";
-    gotoxy(50, 15); cout << "4. Press Backspace to go to the previous page.";
+    gotoxy(38, 3); cout << "=======================================";
+    gotoxy(38, 4); cout << " _____   _   _   _       _____   _____ ";
+    gotoxy(38, 5); cout << "| ___ \\ | | | | | |     |  ___| /  ___|";
+    gotoxy(38, 6); cout << "| |_/ / | | | | | |     | |__   \\ `--.";
+    gotoxy(38, 7); cout << "|    /  | | | | | |     |  __|   `--. \\";
+    gotoxy(38, 8); cout << "| |\\ \\  | |_| | | |____ | |___  /\\__/ /";
+    gotoxy(38, 9); cout << "\\_| \\_|  \\___/  \\_____/ \\____/  \\____/";
+    gotoxy(38, 11); cout << "=======================================";
+    gotoxy(40, 13); cout << "1. Wait for the maze to generate.";
+    gotoxy(40, 14); cout << "2. Try to figure out how to solve it.";
+    gotoxy(40, 15); cout << "3. Have fun solving it!!";
+    gotoxy(40, 16); cout << "4. Press Backspace to go to the previous page.";
 
 
     back = _getch();

@@ -67,13 +67,13 @@ void maze_grid(int size, char** arr)
     //continues until all cells have been assigned a value
     while (counter < (size-1)*(size-1))
     {
-        if (j < size - 1)
+        if (j < size - 2)
         if (arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x') //East
         {
             available_arr[0] = true;
             av_check = true;
         }
-        if (i < size - 1)
+        if (i < size - 2)
         if (arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x') //South
         {
             available_arr[1] = true;
@@ -191,7 +191,7 @@ void maze_grid(int size, char** arr)
     {
         for (int j = 0; j < size; j++)
         {
-            if (int(arr[i][j]) == 0)
+            if (arr[i][j] != 'y')
                 arr[i][j] = 'x';
         }
     }

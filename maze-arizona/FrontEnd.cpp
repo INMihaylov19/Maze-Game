@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const char field = '*';
+const char field = 'X';
 
 void check(int size) // checks where to put a square or empty space
 {
@@ -29,10 +29,6 @@ void check(int size) // checks where to put a square or empty space
 			{
 				cout << " ";
 			}
-			/*else
-			{
-				cout << " ";
-			}*/
 		}
 		cout << endl;
 	}

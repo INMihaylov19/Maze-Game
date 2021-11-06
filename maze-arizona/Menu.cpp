@@ -27,11 +27,11 @@ void choice()
 
     for (int i = 0;;)
     {
-        gotoxy(48, 13); color(SetColor[0]); cout << "1. 10x10 "; color(SetColor[1]);
+        gotoxy(48, 13); color(SetColor[0]); cout << "1. 10x10 "; 
 
-        gotoxy(48, 14); color(SetColor[1]); cout << "2. 20x20 "; color(SetColor[1]);
+        gotoxy(48, 14); color(SetColor[1]); cout << "2. 20x20 "; 
 
-        gotoxy(48, 15); color(SetColor[2]); cout << "3. 30x30 " << endl; color(SetColor[0]);
+        gotoxy(48, 15); color(SetColor[2]); cout << "3. 30x30 " << endl; 
 
         choice = _getch();
 

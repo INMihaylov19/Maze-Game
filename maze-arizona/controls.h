@@ -6,9 +6,11 @@
 
 int SetColor[];
 
+extern const char Player;
+
 void color(int color);
 
 void gotoxy(int x, int y);
 
-void controls();
+void controls(char **arr);
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "BackEnd.h"
+#include "controls.h"
 
 using namespace std;
 
@@ -32,6 +33,8 @@ void check(int size) // checks where to put a square or empty space
 		}
 		cout << endl;
 	}
+
+	controls(grid);
 
 	//deallocate memory
 	for (int i = 0; i < size; i++)

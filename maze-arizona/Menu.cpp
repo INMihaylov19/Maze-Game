@@ -49,21 +49,21 @@ void choice()
             {
                 //display the 10x10 grid
                 system("CLS");
-                check(10);
+                check(11);
                 break;
             }
             if (choiceCount == 2)
             {
                 //display the 20x20 grid
                 system("CLS");
-                check(20);
+                check(21);
                 break;
             }
             if (choiceCount == 3)
             {
                 //display the 30x30 grid
                 system("CLS");
-                check(30);
+                check(31);
                 break;
             }
         }

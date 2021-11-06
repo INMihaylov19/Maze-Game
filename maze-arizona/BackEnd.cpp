@@ -11,19 +11,21 @@ void assign_new_values(const stack<pair<int, int>>& stack, int& i, int& j)
 
 void check_path_cell(char** arr, const stack<pair<int, int>>& stack, int& i, int& j)
 { //make the cell between the two filled cells a path cell
-    if (i == stack.top().first)
+    if (i == stack.top().first) //if it's on the same row
     {
-        if (j + 2 == stack.top().second)
-            arr[stack.top().first][stack.top().second + 1] = 'y';
-        else if (j - 2 == stack.top().second)
-            arr[stack.top().first][stack.top().second - 1] = 'y';
+        if (j + 2 == stack.top().second) //if it's after (right) the current cell
+            arr[stack.top().first][j + 1] = 'y';
+
+        else if (j - 2 == stack.top().second) //if it's before (left) the current cell
+            arr[stack.top().first][j - 1] = 'y';
     }
-    else if (j == stack.top().second)
+    else if (j == stack.top().second) // if it's in the same column
     {
-        if (i + 2 == stack.top().first)
-            arr[stack.top().first + 1][stack.top().second] = 'y';
-        else if (i - 2 == stack.top().first)
-            arr[stack.top().first - 1][stack.top().second] = 'y';
+        if (i + 2 == stack.top().first) //if it's above the current cell
+            arr[i + 1][stack.top().second] = 'y';
+
+        else if (i - 2 == stack.top().first) //if it's below the current cell
+            arr[i - 1][stack.top().second] = 'y';
     }
 }
 

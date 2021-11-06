@@ -12,5 +12,5 @@ void color(int color);
 
 void gotoxy(int x, int y);
 
-void controls(char **arr);
+void controls(char **arr, int size);
 

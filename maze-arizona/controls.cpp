@@ -1,4 +1,4 @@
-#include <conio.h>
+﻿#include <conio.h>
 #include <iostream>
 #include <windows.h>
 #include "controls.h"
@@ -9,7 +9,16 @@ using namespace std;
 #define KEY_RIGHT 77
 #define KEY_DOWN  80
 
-const char Player = char(234);
+#define RESET   "\033[0m"
+#define RED     "\033[1;91m" 
+#define GREEN   "\033[1;92m" 
+#define YELLOW  "\033[1;93m"
+#define BLUE    "\033[1;96m"
+#define PURPLE  "\033[1;95m"
+#define WHITE   "\033[4;37m"
+
+//player character
+const char Player = 'O';
 
 int SetColor[3] = { 13, 7, 7 };
 
@@ -19,53 +28,53 @@ void color(int color)
 }
 
 void gotoxy(int x, int y)
-{
+{ //get the coordinates inside the console
     COORD coord;
-    coord.X = x; // your X cordinates
-    coord.Y = y; // your Y cordinates
+    coord.X = x; //character's X cordinates
+    coord.Y = y; //character's Y cordinates
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-void controls(char **arr)
+void controls(char **arr, int size)
 {
-    int character, arrow;
-
     int x, y, lastX, lastY;
 
+    //current and previous coodrinates
     x = 1; lastX = x;
     y = 1; lastY = y;
 
-    /* start an Infinite Loop */
-
     while (true)
     {
-        /* Head to LastX and LastY and clear old O*/
+        //go to lastX and lastY and clear old O
         gotoxy(lastX, lastY);
         cout << " ";
-        /* Draw New O */
+
+        //draw new O
         gotoxy(x, y);
-        cout << Player;
-        /* Remember Old X and Y */
+        cout << YELLOW; cout << Player; cout << RESET;
+
+        // remember old x and y
         lastX = x; lastY = y;
      
-            switch (_getch())
-            {
-            case KEY_UP:
-                if (arr[x][y] == 'y')
-                    y--;
-                break;
-            case KEY_DOWN:
-                if (arr[x][y] == 'y')
-                    y++;
-                break;
-            case KEY_LEFT:
-                if (arr[x][y] == 'y')
-                    x--;
-                break;
-            case KEY_RIGHT:
-                if (arr[x][y] == 'y')
-                    x++;
-                break;
-            }
+        //get input from the keyboard
+        switch (_getch())
+        {
+        case KEY_UP:
+            if (y > 0 && arr[y-1][x] == 'y')
+                y--;
+            break;
+        case KEY_DOWN:
+            if (y < size-1 && arr[y+1][x] == 'y')
+                y++;
+            break;
+        case KEY_LEFT:
+            if (x > 0 && arr[y][x-1] == 'y')
+                x--;
+            break;
+        case KEY_RIGHT:
+            if (x < size-1 && arr[y][x+1] == 'y')
+                x++;
+            break;
         }
     }
+}

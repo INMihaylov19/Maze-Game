@@ -4,9 +4,18 @@
 
 using namespace std;
 
+#define RESET   "\033[0m"
+#define RED     "\033[1;91m" 
+#define GREEN   "\033[1;92m" 
+#define YELLOW  "\033[1;93m"
+#define BLUE    "\033[1;96m"
+#define PURPLE  "\033[1;95m"
+#define WHITE   "\033[4;37m"
+
+//the character used for printing the walls of the maze
 const char field = 'X';
 
-void check(int size) // checks where to put a square or empty space
+void check(int size) //checks where to put a square or empty space
 {
 	//declare the grid for the maze
 	char** grid = new char* [size];
@@ -24,7 +33,9 @@ void check(int size) // checks where to put a square or empty space
 		{
 			if (grid[i][j] == 'x')
 			{
+				cout << BLUE;
 				cout << field;
+				cout << RESET;
 			}
 			else if (grid[i][j] == 'y')
 			{
@@ -34,7 +45,8 @@ void check(int size) // checks where to put a square or empty space
 		cout << endl;
 	}
 
-	controls(grid);
+	//add the moving character
+	controls(grid, size);
 
 	//deallocate memory
 	for (int i = 0; i < size; i++)

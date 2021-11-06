@@ -16,6 +16,7 @@ void check(int size) // checks where to put a square or empty space
 
 	maze_grid(size, grid);
 
+	//print the maze
 	for (int i = 0; i < size; i++)
 	{
 		for (int j = 0; j < size; j++)
@@ -28,10 +29,15 @@ void check(int size) // checks where to put a square or empty space
 			{
 				cout << "  ";
 			}
+			else
+			{
+				cout << "  ";
+			}
 		}
 		cout << endl;
 	}
 
+	//deallocate memory
 	for (int i = 0; i < size; i++)
 		delete[] grid[i];
 	delete[] grid;

@@ -1,5 +1,6 @@
-# Maze-Gam
+# Maze-Game
 ## Team Arizona
+<img src = "/Pictures for README/logo.png">
 <hr>
 
 # Participants:

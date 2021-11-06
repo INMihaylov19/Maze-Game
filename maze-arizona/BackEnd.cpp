@@ -48,7 +48,7 @@ void maze_grid(int size, char** arr)
 
     //available spaces around current cell
     stack<pair<int, int>> available;
-    bool available_arr[4] = { 0, 0, 0, 0 };
+    bool available_arr[4] = { false, false, false, false };
 
     //the path used for backtracking
     stack<pair<int, int>> path;
@@ -57,27 +57,27 @@ void maze_grid(int size, char** arr)
     int i = 1; int j = 1;
 
     //continues until all cells have been assigned a value
-    while (counter != (size - 1) * size + size)
+    while (counter != size*size)
     {
-        if (arr[i][j + 2] && arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x')//
+        if (arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x') //East //arr[i][j + 2] && 
         {
             available.push({ i, j + 2 });
-            available_arr[0] = 1;
+            available_arr[0] = true;
         }
-        if (arr[i + 2][j] && arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x')
+        if (arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x') //South //arr[i + 2][j] && 
         {
             available.push({ i + 2, j });
-            available_arr[1] = 1;
+            available_arr[1] = true;
         }
-        if (i > 1 && arr[i - 2][j] && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //
+        if (i > 1 && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //North //arr[i - 2][j] && 
         {
             available.push({ i - 2, j });
-            available_arr[2] = 1;
+            available_arr[2] = true;
         }
-        if (j > 1 && arr[i][j - 2] && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //
+        if (j > 1 && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //West //arr[i][j - 2] && 
         {
             available.push({ i, j - 2 });
-            available_arr[3] = 1;
+            available_arr[3] = true;
         }
 
         if (!available.empty())

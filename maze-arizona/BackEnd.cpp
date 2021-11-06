@@ -1,6 +1,7 @@
 #include <stack>
 #include <cstdlib>
 #include <ctime>
+#include "contols.h"
 using namespace std;
 
 void assign_new_values(pair<int, int> pair, int& i, int& j)

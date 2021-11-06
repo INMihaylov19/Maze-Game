@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const char field = char(219);
+const char field = '*';
 
 void check(int size) // checks where to put a square or empty space
 {
@@ -23,16 +23,16 @@ void check(int size) // checks where to put a square or empty space
 		{
 			if (grid[i][j] == 'x')
 			{
-				cout << field << field;
+				cout << field;
 			}
 			else if (grid[i][j] == 'y')
 			{
-				cout << "  ";
+				cout << " ";
 			}
-			else
+			/*else
 			{
-				cout << "  ";
-			}
+				cout << " ";
+			}*/
 		}
 		cout << endl;
 	}

@@ -29,6 +29,11 @@ void check_path_cell(char** arr, int size, pair<int, int> pair, int& i, int& j)
     }
 }
 
+int eswn_rand(int max)
+{ //return a random number in the range [1; 4]
+    return (rand() % max) + 1;
+}
+
 void maze_grid(int size, char** arr)
 {
     //cell count
@@ -42,7 +47,6 @@ void maze_grid(int size, char** arr)
         arr[i][0] = 'x';
         arr[size - 1][i] = 'x';
         arr[i][size - 1] = 'x';
-        counter += 4;
     }
     arr[1][1] = 'y';
 
@@ -57,8 +61,11 @@ void maze_grid(int size, char** arr)
     //coordinates
     int i = 1; int j = 1;
 
+    //random number generator variable
+    int next_cell;
+
     //continues until all cells have been assigned a value
-    while (counter != size*size)
+    while (counter < (size-1)*(size-1))
     {
         if (j < size - 1 && arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x') //East
         {
@@ -70,26 +77,25 @@ void maze_grid(int size, char** arr)
             available_arr[1] = true;
             av_check = true;
         }
-        if (j > 1 && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //West
+        if (j >= 2 && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //West
         {
             available_arr[2] = true;
             av_check = true;
         }
-        if (i > 1 && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //North
+        if (i >= 2 && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //North
         {
             available_arr[3] = true;
             av_check = true;
         }
 
-        if (av_check) //
+        if (av_check)
         {
             // Choose one available neighbour at random
-            srand((unsigned)time(0));
-            int next_cell;
+            srand(time(0));
             while (true) //break if the cell is available
             {
-                next_cell = (rand() % 4) + 1;
-                if (available_arr[next_cell - 1])
+                next_cell = eswn_rand(4);
+                if (available_arr[next_cell - 1] == true)
                     break;
             }
 
@@ -161,13 +167,19 @@ void maze_grid(int size, char** arr)
                 break;
             }
 
+            //assign values to checker variables
             av_check = false;
+            for (int i = 0; i < 4; i ++)
+                available_arr[i] = false;
         }
         else
         {
             path.pop();
             //assign the previous cell's values to the coordinate variables
-            assign_new_values(path.top(), i, j);
+            if (!path.empty())
+                assign_new_values(path.top(), i, j);
+            else
+                break;
         }
     }
 

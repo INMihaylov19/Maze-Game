@@ -5,13 +5,13 @@
 
 # Participants:
 
-• Ivaylo Markov(IPMarkov19) - QA engineer
+• Ivaylo Markov (IPMarkov19) - QA engineer
 
-• Ivan Mihaylov(INMihaylov19) - Scrum trainer
+• Ivan Mihaylov (INMihaylov19) - Scrum trainer
 
-• Yoanna Simeonova(YVSimeonov19) - Back-end developer
+• Yoanna Simeonova (YVSimeonova19) - Back-end developer
 
-• Kristian Tsvetkov(KPTsvetkov19) - Front-end developer
+• Kristian Tsvetkov (KPTsvetkov19) - Front-end developer
 
 # Resume of the poject:
 

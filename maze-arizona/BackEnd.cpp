@@ -59,24 +59,24 @@ void maze_grid(int size, char** arr)
     //continues until all cells have been assigned a value
     while (counter != size*size)
     {
-        if (arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x') //East //arr[i][j + 2] && 
+        if (arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x') //East
         {
             available.push({ i, j + 2 });
             available_arr[0] = true;
         }
-        if (arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x') //South //arr[i + 2][j] && 
+        if (arr[i + 2][j] != 'y' && arr[i + 2][j] != 'x') //South
         {
             available.push({ i + 2, j });
             available_arr[1] = true;
         }
-        if (i > 1 && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //North //arr[i - 2][j] && 
-        {
-            available.push({ i - 2, j });
-            available_arr[2] = true;
-        }
-        if (j > 1 && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //West //arr[i][j - 2] && 
+        if (j > 1 && arr[i][j - 2] != 'y' && arr[i][j - 2] != 'x') //West
         {
             available.push({ i, j - 2 });
+            available_arr[2] = true;
+        }
+        if (i > 1 && arr[i - 2][j] != 'y' && arr[i - 2][j] != 'x') //North
+        {
+            available.push({ i - 2, j });
             available_arr[3] = true;
         }
 
@@ -85,7 +85,7 @@ void maze_grid(int size, char** arr)
             // Choose one available neighbour at random
             srand((unsigned)time(0));
             int next_cell;
-            while (true)
+            while (true) //break if the cell is available
             {
                 next_cell = (rand() % 4) + 1;
                 if (available_arr[next_cell - 1])
@@ -96,7 +96,7 @@ void maze_grid(int size, char** arr)
             switch (next_cell)
             {
             case 1: // East
-                arr[available.top().first][available.top().second] = 'y';
+                arr[i][j + 2] = 'y';
 
                 //make the cell between the two filled cells a path cell
                 check_path_cell(arr, available, i, j);
@@ -104,13 +104,12 @@ void maze_grid(int size, char** arr)
                 //assign the new cell's values to the coordinate variables
                 assign_new_values(available, i, j);
 
-                path.push(available.top());
+                path.push({ i, j + 2 });
                 counter += 2;
                 break;
 
             case 2: // South
-                available.pop();
-                arr[available.top().first][available.top().second] = 'y';
+                arr[i + 2][j] = 'y';
 
                 //make the cell between the two filled cells a path cell
                 check_path_cell(arr, available, i, j);
@@ -118,14 +117,12 @@ void maze_grid(int size, char** arr)
                 //assign the new cell's values to the coordinate variables
                 assign_new_values(available, i, j);
 
-                path.push(available.top());
+                path.push({ i + 2, j });
                 counter += 2;
                 break;
 
             case 3: // West
-                available.pop();
-                available.pop();
-                arr[available.top().first][available.top().second] = 'y';
+                arr[i][j - 2] = 'y';
 
                 //make the cell between the two filled cells a path cell
                 check_path_cell(arr, available, i, j);
@@ -133,15 +130,12 @@ void maze_grid(int size, char** arr)
                 //assign the new cell's values to the coordinate variables
                 assign_new_values(available, i, j);
 
-                path.push(available.top());
+                path.push({ i, j - 2 });
                 counter += 2;
                 break;
 
             case 4: // North
-                available.pop();
-                available.pop();
-                available.pop();
-                arr[available.top().first][available.top().second] = 'y';
+                arr[i - 2][j] = 'y';
 
                 //make the cell between the two filled cells a path cell
                 check_path_cell(arr, available, i, j);
@@ -149,7 +143,7 @@ void maze_grid(int size, char** arr)
                 //assign the new cell's values to the coordinate variables
                 assign_new_values(available, i, j);
 
-                path.push(available.top());
+                path.push({ i - 2, j });
                 counter += 2;
                 break;
             }

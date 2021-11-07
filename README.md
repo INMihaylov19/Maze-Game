@@ -20,7 +20,8 @@
 # Documents
 
 [•Presentation](Documents/Presentation.pptx) <br><br>
-[•Documentation](Documents/Documentation.docx)
+[•Documentation](Documents/Documentation.docx) <br><br>
+[•QA Documentation](Documents/QADocumentation.xlsx)
 
 # Pictures of final product
 

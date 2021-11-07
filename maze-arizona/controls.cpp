@@ -44,7 +44,9 @@ void controls(char **arr, int size)
     x = 1; lastX = x;
     y = 1; lastY = y;
 
-    while (true)
+    bool loop = true;
+
+    while (loop)
     {
         char movement;
         //go to lastX and lastY and clear old O
@@ -71,6 +73,7 @@ void controls(char **arr, int size)
                 y--;
                 system("CLS");
                 winMessage();
+                loop = false;
             }
             break;
         case KEY_DOWN:
@@ -81,6 +84,7 @@ void controls(char **arr, int size)
                 y++;
                 system("CLS");
                 winMessage();
+                loop = false;
             }
             break;
         case KEY_LEFT:
@@ -88,9 +92,10 @@ void controls(char **arr, int size)
                 x--;
             else if (x > 0 && arr[y][x - 1] == 'z')
             {
-                x--; //mahni tova
+                x--;
                 system("CLS");
                 winMessage();
+                loop = false;
             }
             break;
         case KEY_RIGHT:
@@ -101,6 +106,7 @@ void controls(char **arr, int size)
                 x++;
                 system("CLS");
                 winMessage();
+                loop = false;
             }
             break;
         }

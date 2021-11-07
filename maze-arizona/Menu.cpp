@@ -137,7 +137,6 @@ int Menu()
 
 void winMessage()
 {
-    char back;
     gotoxy(30, 7); cout << "__   __  _____   _   _     _    _   _____   _   _   _" << endl;
     gotoxy(30, 8); cout << "\\ \\ / / |  _  | | | | |   | |  | | |  _  | | \\ | | | |" << endl;
     gotoxy(30, 9); cout << " \\ V /  | | | | | | | |   | |  | | | | | | |  \\| | | |" << endl;
@@ -145,12 +144,9 @@ void winMessage()
     gotoxy(30, 11); cout << "  | |   \\ \\_/ / | |_| |   \\  /\\  / \\ \\_/ / | |\\  | |_|" << endl;
     gotoxy(30, 12); cout << "  \\_/    \\___/   \\___/     \\/  \\/   \\___/  \\_| \\_/ (_)" << endl;
 
-    gotoxy(39, 14); cout << "Press Backspace to enter the main menu...";
+    gotoxy(39, 14); cout << "Press any key to enter the main menu...";
 
-    back = _getch();
-
-
-    if (back == '\b')// Backspace key
+    if (_getch())//waiting to press a key
     {
         system("CLS");
         Menu();

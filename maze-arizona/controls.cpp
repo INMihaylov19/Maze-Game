@@ -60,20 +60,40 @@ void controls(char **arr, int size)
         switch (_getch())
         {
         case KEY_UP:
-            if (y > 0 && arr[y-1][x] == 'y')
+            if (y > 0 && arr[y - 1][x] == 'y')
                 y--;
+            else if (y > 0 && arr[y - 1][x] == 'z')
+            {
+                y--;
+                //insert function for 'you win'
+            }
             break;
         case KEY_DOWN:
-            if (y < size-1 && arr[y+1][x] == 'y')
+            if (y < size - 1 && arr[y + 1][x] == 'y')
                 y++;
+            else if (y < size - 1 && arr[y + 1][x] == 'z')
+            {
+                y++;
+                //insert function for 'you win'
+            }
             break;
         case KEY_LEFT:
-            if (x > 0 && arr[y][x-1] == 'y')
+            if (x > 0 && arr[y][x - 1] == 'y')
                 x--;
+            else if (x > 0 && arr[y][x - 1] == 'z')
+            {
+                x--; //mahni tova
+                //insert function for 'you win'
+            }
             break;
         case KEY_RIGHT:
-            if (x < size-1 && arr[y][x+1] == 'y')
+            if (x < size - 1 && arr[y][x + 1] == 'y')
                 x++;
+            else if (x < size - 1 && arr[y][x + 1] == 'z')
+            {
+                x++;
+                //insert function for 'you win'
+            }
             break;
         }
     }

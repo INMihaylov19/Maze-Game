@@ -33,15 +33,15 @@ void check_path_cell(char** arr, int size, pair<int, int> pair, int& i, int& j)
 int eswn_rand(int max)
 { //return a random number in the range [1; 4]
     return (rand() % max) + 1;
-}
+} 
 
 void maze_grid(int size, char** arr)
 {
     //cell count
-    int counter = 0;
+    int counter = 1;
 
     //consequtive moves of the maze-generating
-    pair <int, int> consq_counter (0, 0);
+    pair <int, int> consq_counter (0, 0); //first - direction; second - consequtive choices
 
     //assign a random value [0; 3] to a variable for the max consequrive moves
     srand(time(0));
@@ -49,6 +49,7 @@ void maze_grid(int size, char** arr)
 
     // wall - x
     // path cell - y
+    // end - z
     for (int i = 0; i < size; i++)
     {
         arr[0][i] = 'x';
@@ -72,9 +73,33 @@ void maze_grid(int size, char** arr)
     //random number generator variable
     int next_cell;
 
+    //end value maze
+    int max_maze = ((size - 2) / 2 + 1) * ((size - 2) / 2 + 1) - 1;
+
     //continues until all cells have been assigned a value
-    while (counter < (size-1)*(size-1))
+    while (counter <= max_maze)
     {
+        if (counter == max_maze)
+        {
+            //assign end field's value
+            arr[i][j] = 'z';
+            //switch (consq_counter.first)
+            //{
+            //case 1: //East
+            //    j += 2;
+            //    arr[i][j] = 'z';
+            //case 2: //South
+            //    i += 2;
+            //    arr[i][j] = 'z';//
+            //case 3: //West
+            //    j -= 2;
+            //    arr[i][j] = 'z';
+            //case 4: //North
+            //    i -= 2;
+            //    arr[i][j] = 'z';
+            //}
+        }
+
         if (j < size - 2)
         if (arr[i][j + 2] != 'y' && arr[i][j + 2] != 'x') //East
         {
@@ -107,19 +132,22 @@ void maze_grid(int size, char** arr)
             while (true) //break if the cell is available
             {
                 next_cell = eswn_rand(4);
+                //if the direction is different from the last choice
                 if (consq_counter.first != next_cell && next_cell > 0 && available_arr[next_cell - 1] == true)
                 {
                     consq_counter.first = next_cell;
-                    max_consq = rand() % 4;
+                    max_consq = (rand() % 3) + 1;
                     consq_counter.second = 1;
                     break;
                 }
+                //if the direction is the same as the last choice and has been chosen less times than the max counter
                 else if (consq_counter.first == next_cell && consq_counter.second <= max_consq && next_cell > 0 && available_arr[next_cell - 1] == true)
                 {
                     consq_counter.second++;
                     break;
                 }
-                else if (consq_counter.first == next_cell && consq_counter.second > max_consq && next_cell > 0)
+                //if the direction is the same as the last choice but it's been chosen more times than the max counter
+                else if (consq_counter.second > max_consq && next_cell > 0)
                 {
                     available_arr[next_cell - 1] = false;
                     consq_counter.first = 0;
@@ -143,7 +171,7 @@ void maze_grid(int size, char** arr)
                 assign_new_values(available, i, j);
 
                 path.push(available);
-                counter += 2;
+                counter++;
                 break;
 
             case 2: // South
@@ -159,7 +187,7 @@ void maze_grid(int size, char** arr)
                 assign_new_values(available, i, j);
 
                 path.push(available);
-                counter += 2;
+                counter++;
                 break;
 
             case 3: // West
@@ -175,7 +203,7 @@ void maze_grid(int size, char** arr)
                 assign_new_values(available, i, j);
 
                 path.push(available);
-                counter += 2;
+                counter++;
                 break;
 
             case 4: // North
@@ -191,7 +219,7 @@ void maze_grid(int size, char** arr)
                 assign_new_values(available, i, j);
 
                 path.push(available);
-                counter += 2;
+                counter++;
                 break;
             }
 
@@ -215,7 +243,7 @@ void maze_grid(int size, char** arr)
     {
         for (int j = 0; j < size; j++)
         {
-            if (arr[i][j] != 'y')
+            if (arr[i][j] != 'y' && arr[i][j] != 'z')
                 arr[i][j] = 'x';
         }
     }

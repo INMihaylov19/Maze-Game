@@ -41,6 +41,12 @@ void check(int size) //checks where to put a square or empty space
 			{
 				cout << " ";
 			}
+			else if (grid[i][j] == 'z')
+			{
+				cout << YELLOW;
+				cout << field;
+				cout << RESET;
+			}
 		}
 		cout << endl;
 	}

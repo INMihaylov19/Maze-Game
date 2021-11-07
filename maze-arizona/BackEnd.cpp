@@ -40,6 +40,13 @@ void maze_grid(int size, char** arr)
     //cell count
     int counter = 0;
 
+    //consequtive moves of the maze-generating
+    pair <int, int> consq_counter (0, 0);
+
+    //assign a random value [0; 3] to a variable for the max consequrive moves
+    srand(time(0));
+    int max_consq = rand() % 4;
+
     // wall - x
     // path cell - y
     for (int i = 0; i < size; i++)
@@ -100,8 +107,24 @@ void maze_grid(int size, char** arr)
             while (true) //break if the cell is available
             {
                 next_cell = eswn_rand(4);
-                if (available_arr[next_cell - 1] == true)
+                if (consq_counter.first != next_cell && next_cell > 0 && available_arr[next_cell - 1] == true)
+                {
+                    consq_counter.first = next_cell;
+                    max_consq = rand() % 4;
+                    consq_counter.second = 1;
                     break;
+                }
+                else if (consq_counter.first == next_cell && consq_counter.second <= max_consq && next_cell > 0 && available_arr[next_cell - 1] == true)
+                {
+                    consq_counter.second++;
+                    break;
+                }
+                else if (consq_counter.first == next_cell && consq_counter.second > max_consq && next_cell > 0)
+                {
+                    available_arr[next_cell - 1] = false;
+                    consq_counter.first = 0;
+                    consq_counter.second = 0;
+                }
             }
 
             // Create a path between the neighbour and the current cell

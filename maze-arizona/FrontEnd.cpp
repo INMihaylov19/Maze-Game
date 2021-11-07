@@ -13,7 +13,7 @@ using namespace std;
 #define WHITE   "\033[4;37m"
 
 //the character used for printing the walls of the maze
-const char field = 'X';
+const char field = char(219);
 
 void check(int size) //checks where to put a square or empty space
 {

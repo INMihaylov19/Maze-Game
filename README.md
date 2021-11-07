@@ -26,13 +26,13 @@
 # Pictures of final product
 
 ## •Main Menu
-<img src = "/Pictures for REAMDE/Menu.png"> 
+<img src = "/Pictures for README/Menu.png"> 
 
 ## •Rules
-<img src = "/Pictures for REAMDE/Rules.png">
+<img src = "/Pictures for README/Rules.png">
 
 ## •Play!
-<img src = "/Pictures for REAMDE/Maze.png">
+<img src = "/Pictures for README/Maze.png">
 
 
 

@@ -20,16 +20,19 @@
 # Documents
 
 [•Presentation](Documents/Presentation.pptx) <br><br>
-[•Documentation](Documents/Documentation.docx)
+[•Documentation](Documents/Documentation.docx) <br><br>
+[•QA Documentation](Documents/QADocumentation.xlsx)
 
 # Pictures of final product
 
 ## •Main Menu
-<!--Picture of the main menu-->
+<img src = "/Pictures for README/Menu.png"> 
+
 ## •Rules
-<!--Picture of the rules page-->
+<img src = "/Pictures for README/Rules.png">
+
 ## •Play!
-<!--Picture of the actual game-->
+<img src = "/Pictures for README/Maze.png">
 
 
 

@@ -11,3 +11,5 @@ void menuArt();
 int Menu();
 
 void choice();
+
+void winMessage();

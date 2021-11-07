@@ -2,6 +2,7 @@
 #include <iostream>
 #include <windows.h>
 #include "controls.h"
+#include "Menu.h"
 using namespace std;
 
 #define KEY_UP    72
@@ -45,6 +46,7 @@ void controls(char **arr, int size)
 
     while (true)
     {
+        char movement;
         //go to lastX and lastY and clear old O
         gotoxy(lastX, lastY);
         cout << " ";
@@ -55,9 +57,11 @@ void controls(char **arr, int size)
 
         // remember old x and y
         lastX = x; lastY = y;
+
+        movement = _getch();
      
         //get input from the keyboard
-        switch (_getch())
+        switch (movement)
         {
         case KEY_UP:
             if (y > 0 && arr[y - 1][x] == 'y')
@@ -65,7 +69,8 @@ void controls(char **arr, int size)
             else if (y > 0 && arr[y - 1][x] == 'z')
             {
                 y--;
-                //insert function for 'you win'
+                system("CLS");
+                winMessage();
             }
             break;
         case KEY_DOWN:
@@ -74,7 +79,8 @@ void controls(char **arr, int size)
             else if (y < size - 1 && arr[y + 1][x] == 'z')
             {
                 y++;
-                //insert function for 'you win'
+                system("CLS");
+                winMessage();
             }
             break;
         case KEY_LEFT:
@@ -83,7 +89,8 @@ void controls(char **arr, int size)
             else if (x > 0 && arr[y][x - 1] == 'z')
             {
                 x--; //mahni tova
-                //insert function for 'you win'
+                system("CLS");
+                winMessage();
             }
             break;
         case KEY_RIGHT:
@@ -92,7 +99,8 @@ void controls(char **arr, int size)
             else if (x < size - 1 && arr[y][x + 1] == 'z')
             {
                 x++;
-                //insert function for 'you win'
+                system("CLS");
+                winMessage();
             }
             break;
         }

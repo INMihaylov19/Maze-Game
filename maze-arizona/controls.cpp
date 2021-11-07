@@ -22,6 +22,7 @@ using namespace std;
 const char Player = 'O';
 
 int SetColor[3] = { 13, 7, 7 };
+int SetColor2[3] = { 13, 7, 7 };
 
 void color(int color)
 {

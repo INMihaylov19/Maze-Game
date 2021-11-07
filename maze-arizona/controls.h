@@ -6,6 +6,8 @@
 
 int SetColor[];
 
+int SetColor2[];
+
 extern const char Player;
 
 void color(int color);

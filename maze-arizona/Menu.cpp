@@ -24,13 +24,17 @@ void choice()
     int choiceCount = 1;
     char choice;
 
-    for (int i = 0;;)
+    SetColor2[0] = 13;
+    SetColor2[1] = 7;
+    SetColor2[2] = 7;
+
+    while(true)
     {
-        gotoxy(48, 13); color(SetColor[0]); cout << "1. 10x10 "; 
+            gotoxy(48, 13); color(SetColor2[0]); cout << "1. 10x10 "; SetColor2[0];
 
-        gotoxy(48, 14); color(SetColor[1]); cout << "2. 20x20 "; 
+            gotoxy(48, 14); color(SetColor2[1]); cout << "2. 20x20 "; SetColor2[1];
 
-        gotoxy(48, 15); color(SetColor[2]); cout << "3. 30x30 " << endl; 
+            gotoxy(48, 15); color(SetColor2[2]); cout << "3. 30x30 " << endl; SetColor2[2];
 
         choice = _getch();
 
@@ -67,13 +71,13 @@ void choice()
             }
         }
 
-        SetColor[0] = 7;
-        SetColor[1] = 7;
-        SetColor[2] = 7;
+        SetColor2[0] = 7;
+        SetColor2[1] = 7;
+        SetColor2[2] = 7;
 
-        if (choiceCount == 1) { SetColor[0] = 13; }
-        if (choiceCount == 2) { SetColor[1] = 13; }
-        if (choiceCount == 3) { SetColor[2] = 13; }
+        if (choiceCount == 1) { SetColor2[0] = 13; }
+        if (choiceCount == 2) { SetColor2[1] = 13; }
+        if (choiceCount == 3) { SetColor2[2] = 13; }
 
     }
 
@@ -84,10 +88,14 @@ int Menu()
     int counter = 1;
     char key;
 
+    SetColor[0] = 13;
+    SetColor[1] = 7;
+    SetColor[2] = 7;
+
     menuArt();
 
 
-    for (int i = 0;;)
+    while(true)
     {
         gotoxy(48, 13); color(SetColor[0]); cout << "1. Get started "; color(SetColor[2]);
 

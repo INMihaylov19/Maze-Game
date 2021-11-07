@@ -1,42 +1,48 @@
-# Maze-Game
-## Team Arizona
+## Maze-Game
+# 🌴Team Arizona🌴
 <img src = "/Pictures for README/logo.png">
 <hr>
 
-# Participants:
+# Table of contents 📖
 
-• Ivaylo Markov (IPMarkov19) - QA engineer
++ [Participants](#participants)
++ [Resume of the project](#resume)
++ [Documents](#documents)
++ [Pictures of the final product](#pictures)
 
-• Ivan Mihaylov (INMihaylov19) - Scrum trainer
+# Participants 👨‍💻 <a name = "participants"></a>
 
-• Yoanna Simeonova (YVSimeonova19) - Back-end developer
+- Ivaylo Markov (IPMarkov19) - QA engineer
 
-• Kristian Tsvetkov (KPTsvetkov19) - Front-end developer
+- Ivan Mihaylov (INMihaylov19) - Scrum trainer
 
-# Resume of the poject:
+- Yoanna Simeonova (YVSimeonova19) - Back-end developer
 
-• C++ based maze game, where the player has to solve the maze.
+- Kristian Tsvetkov (KPTsvetkov19) - Front-end developer
 
-# Documents
+# Resume of the poject 💻 <a name = "resume"></a>
 
-[•Presentation](Documents/Presentation.pptx) <br><br>
-[•Documentation](Documents/Documentation.docx) <br><br>
-[•QA Documentation](Documents/QADocumentation.xlsx)
+- C++ based maze game, where the player has to solve the maze.
 
-# Pictures of final product
+# Documents 📄 <a name = "documents"></a>
 
-## •Main Menu
+**[Presentation](Documents/Presentation.pptx)**
+<br><br>
+**[Documentation](Documents/Documentation.docx)** 
+<br><br>
+**[QA Documentation](Documents/QADocumentation.xlsx)**
+
+# Pictures of final product 📷 <a name = "pictures"></a>
+
+- ## Main Menu
 <img src = "/Pictures for README/Menu.png"> 
 
-## •Rules
+- ## Rules
 <img src = "/Pictures for README/Rules.png">
 
-## •Play!
+- ## Play!🎮
 <img src = "/Pictures for README/Maze.png">
 
-
-
-
-
-
-
+```
+Thank you for scrolling this far! Show some ❤ by starring the repo!
+```

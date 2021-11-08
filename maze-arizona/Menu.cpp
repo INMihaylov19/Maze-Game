@@ -52,7 +52,7 @@ void choice()
             {
                 //display the 10x10 grid
                 system("CLS");
-                check(11);
+                check(13);
                 break;
             }
             if (choiceCount == 2)
@@ -66,7 +66,7 @@ void choice()
             {
                 //display the 30x30 grid
                 system("CLS");
-                check(31);
+                check(33);
                 break;
             }
         }

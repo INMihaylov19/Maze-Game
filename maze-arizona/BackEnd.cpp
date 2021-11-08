@@ -57,7 +57,7 @@ void maze_grid(int size, char** arr)
         arr[size - 1][i] = 'x';
         arr[i][size - 1] = 'x';
     }
-    arr[1][1] = 'y';
+    arr[size / 2 + 1][size / 2 + 1] = 'y';
 
     //available spaces around current cell
     pair<int, int> available;
@@ -67,8 +67,8 @@ void maze_grid(int size, char** arr)
     //the path used for backtracking
     stack<pair<int, int>> path;
 
-    //coordinates
-    int i = 1; int j = 1;
+    //coordinates (start from the middle of the maze)
+    int i = size / 2 + 1; int j = size / 2 + 1;
 
     //random number generator variable
     int next_cell;

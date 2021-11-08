@@ -41,9 +41,9 @@ void controls(char **arr, int size)
 {
     int x, y, lastX, lastY;
 
-    //current and previous coodrinates
-    x = 1; lastX = x;
-    y = 1; lastY = y;
+    //current and previous coodrinates (start from the middle of the maze)
+    x = size / 2 + 1; lastX = x;
+    y = size / 2 + 1; lastY = y;
 
     bool loop = true;
 

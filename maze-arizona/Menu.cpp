@@ -30,11 +30,11 @@ void choice()
 
     while(true)
     {
-            gotoxy(48, 13); color(SetColor2[0]); cout << "1. 10x10 "; SetColor2[0];
+            gotoxy(48, 13); color(SetColor2[0]); cout << "1. Easy "; SetColor2[0];
 
-            gotoxy(48, 14); color(SetColor2[1]); cout << "2. 20x20 "; SetColor2[1];
+            gotoxy(48, 14); color(SetColor2[1]); cout << "2. Medium "; SetColor2[1];
 
-            gotoxy(48, 15); color(SetColor2[2]); cout << "3. 30x30 " << endl; SetColor2[2];
+            gotoxy(48, 15); color(SetColor2[2]); cout << "3. Hard " << endl; SetColor2[2];
 
         choice = _getch();
 

@@ -83,21 +83,6 @@ void maze_grid(int size, char** arr)
         {
             //assign end field's value
             arr[i][j] = 'z';
-            //switch (consq_counter.first)
-            //{
-            //case 1: //East
-            //    j += 2;
-            //    arr[i][j] = 'z';
-            //case 2: //South
-            //    i += 2;
-            //    arr[i][j] = 'z';//
-            //case 3: //West
-            //    j -= 2;
-            //    arr[i][j] = 'z';
-            //case 4: //North
-            //    i -= 2;
-            //    arr[i][j] = 'z';
-            //}
         }
 
         if (j < size - 2)
@@ -125,33 +110,49 @@ void maze_grid(int size, char** arr)
             av_check = true;
         }
 
-        if (av_check)
+        if (av_check == true)
         {
             // Choose one available neighbour at random
             srand(time(0));
             while (true) //break if the cell is available
             {
                 next_cell = eswn_rand(4);
-                //if the direction is different from the last choice
-                if (consq_counter.first != next_cell && next_cell > 0 && available_arr[next_cell - 1] == true)
+                //check if the cell is free
+                if (available_arr[next_cell - 1] == true)
                 {
-                    consq_counter.first = next_cell;
-                    max_consq = (rand() % 3) + 1;
-                    consq_counter.second = 1;
-                    break;
-                }
-                //if the direction is the same as the last choice and has been chosen less times than the max counter
-                else if (consq_counter.first == next_cell && consq_counter.second <= max_consq && next_cell > 0 && available_arr[next_cell - 1] == true)
-                {
-                    consq_counter.second++;
-                    break;
-                }
-                //if the direction is the same as the last choice but it's been chosen more times than the max counter
-                else if (consq_counter.second > max_consq && next_cell > 0)
-                {
-                    available_arr[next_cell - 1] = false;
-                    consq_counter.first = 0;
-                    consq_counter.second = 0;
+                    //if the direction choice is different from the last choice
+                    if (consq_counter.first != next_cell)
+                    {
+                        consq_counter.first = next_cell;
+                        max_consq = (rand() % 3) + 1;
+                        consq_counter.second = 1;
+                        av_check = false;
+                        break;
+                    }
+                    //if the direction choice is the same as the last one
+                    else
+                    {
+                        //if the choice has been made less times than the max counter
+                        if (consq_counter.second <= max_consq)
+                        {
+                            consq_counter.second++;
+                            av_check = false;
+                            break;
+                        }
+                        //if the choice has been made more times than the max allowed
+                        else
+                        {
+                            available_arr[next_cell - 1] = false;
+                            consq_counter.first = 0;
+                            consq_counter.second = 0;
+                            //check if backtracking is needed
+                            if (available_arr[0] == false && available_arr[1] == false && available_arr[2] == false && available_arr[3] == false)
+                            {
+                                av_check = false;
+                                break;
+                            }
+                        }
+                    }
                 }
             }
 

@@ -22,8 +22,9 @@ void rules()
     gotoxy(40, 13); cout << "1. Wait for the maze to generate.";
     gotoxy(40, 14); cout << "2. Try to figure out how to solve it.";
     gotoxy(40, 15); cout << "3. Go to the yellow field to solve the maze.";
-    gotoxy(40, 16); cout << "4. Have fun solving it!!";
-    gotoxy(40, 17); cout << "5. Press any key to go to the previous page.";
+    gotoxy(40, 16); cout << "4. Use arrows to move the player.";
+    gotoxy(40, 17); cout << "5. Have fun solving it!!";
+    gotoxy(40, 18); cout << "6. Press any key to go to the previous page.";
 
 
     if (_getch()) //witing for a key to be pressed

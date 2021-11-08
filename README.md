@@ -42,6 +42,8 @@
 
 - ## Play!🎮
 <img src = "/Pictures for README/Maze.png">
+<br>
+<img src = "/Pictures for README/Maze2.png">
 
 ```
 Thank you for scrolling this far! Show some ❤ by starring the repo!

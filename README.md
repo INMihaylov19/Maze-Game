@@ -1,6 +1,8 @@
 ## Maze-Game
 # 🌴Team Arizona🌴
+<p align="center">
 <img src = "/Pictures for README/logo.png">
+</p>
 <hr>
 
 # Table of contents 📖
@@ -35,15 +37,27 @@
 # Pictures of final product 📷 <a name = "pictures"></a>
 
 - ## Main Menu
+<p align="center">
 <img src = "/Pictures for README/Menu.png"> 
+</p>
 
 - ## Rules
+<p align="center">
 <img src = "/Pictures for README/Rules.png">
+</p>
 
 - ## Play!🎮
-<img width="246px" src = "/Pictures for README/Maze.png" >
+<p align="center">
+<img src = "/Pictures for README/Game_menu.png" >
+</p>
 <br>
-<img width="246px" src = "/Pictures for README/Maze2.png" >
+<p align="center">
+<img src = "/Pictures for README/10x10.png" >
+<br>
+<img src = "/Pictures for README/20x20.png" >
+<br>
+<img src = "/Pictures for README/30x30.png" >
+</p>
 
 ```
 Thank you for scrolling this far! Show some ❤ by starring the repo!
